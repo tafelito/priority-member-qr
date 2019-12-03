@@ -1,0 +1,31 @@
+<head>
+  <title>Priority Member QR Code</title>
+  <meta name="description" content="Priority Member QR Code sharing!" />
+  <meta property="og:title" content="Priority Member QR Code" />
+  <meta property="og:url" content="http://tafelito.github.io/priority-member-qr" />
+  <meta property="og:description" content="Priority Member QR Code sharing" />
+  <meta property="og:image" itemprop="image" content="http://tafelito.github.io/priority-member-qr/qrcode.png" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <!-- <img src="https://s3.amazonaws.com/priority-member-dev/public/qrcodes/93591be230a62247dad9b924aeda65502ca5973c/d809aa664ef33babef861861b1a3c9f7c7924ee6.png"> -->
+  <center>
+    <img id="qrcode" src="loading.gif" />
+  </center>
+
+  <script>
+    setTimeout(function () {
+      var urlParams = new URLSearchParams(location.search);
+
+      const code = urlParams.toString().split("=")[0];
+
+      //alert(code);
+
+      if (code && code != "") {
+        document.getElementById("qrcode").src =
+          "https://res.cloudinary.com/mofiler/image/upload/v1574861426/priority-member/qrcodes/" + code;
+      }
+    }, 400);
+  </script>
+</body>
